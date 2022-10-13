@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;800&display=swap");
+/* Color Theme Swatches in Hex */
+.EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-1-hex {
+  color: #021859;
+}
+
+.EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-2-hex {
+  color: #273459;
+}
+
+.EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-3-hex {
+  color: #212b40;
+}
+
+.EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-4-hex {
+  color: #51718c;
+}
+
+.EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-5-hex {
+  color: #bf8069;
+}
+
+/* Color Theme Swatches in RGBA */
+.EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-1-rgba {
+  color: #011759;
+}
+
+.EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-2-rgba {
+  color: #273359;
+}
+
+.EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-3-rgba {
+  color: #212b3f;
+}
+
+.EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-4-rgba {
+  color: #51708c;
+}
+
+.EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-5-rgba {
+  color: #bf8069;
+}
+
+/* Color Theme sass variable */
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #021859;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#bf8069), to(#021859));
+  background: linear-gradient(to right, #bf8069, #021859);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* boxWave - the animated border */
+.boxWave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  width: 90%;
+  height: 90vh;
+  /*  border: $blueLight 4px solid; */
+}
+
+.boxWave .hl1 {
+  width: 100%;
+  height: 4px;
+  background-color: #51718c;
+  -webkit-animation: openHL1 5s;
+          animation: openHL1 5s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+.boxWave .hl2 {
+  width: 100%;
+  height: 4px;
+  background-color: #51718c;
+  -webkit-animation: openHL2 10s;
+          animation: openHL2 10s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.boxWave .hb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%;
+  height: 89vh;
+}
+
+.boxWave .hb .vl1 {
+  width: 4px;
+  background-color: #51718c;
+  -webkit-animation: openVL1 5s;
+          animation: openVL1 5s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+.boxWave .hb .vl2 {
+  width: 4px;
+  background-color: #51718c;
+  -webkit-animation: openVL2 10s;
+          animation: openVL2 10s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes openVL1 {
+  from {
+    height: 1vh;
+  }
+  to {
+    height: 89vh;
+  }
+}
+
+@keyframes openVL1 {
+  from {
+    height: 1vh;
+  }
+  to {
+    height: 89vh;
+  }
+}
+
+@-webkit-keyframes openHL1 {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes openHL1 {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes openHL2 {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes openHL2 {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes openVL2 {
+  0% {
+    height: 0vh;
+  }
+  50% {
+    height: 0vh;
+  }
+  100% {
+    height: 89vh;
+  }
+}
+
+@keyframes openVL2 {
+  0% {
+    height: 0vh;
+  }
+  50% {
+    height: 0vh;
+  }
+  100% {
+    height: 89vh;
+  }
+}
+
+.closedNavHolder {
+  position: absolute;
+  top: 5.5vh;
+  left: 1.5%;
+  padding-top: 240px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 50px;
+  height: 90vh;
+}
+
+.closedNavHolder #closedButton {
+  all: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 80px;
+  height: 30px;
+  background-color: #51718c;
+  border: 0px 0px 4px 4px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.closedNavHolder .closedMenu {
+  display: none;
+}
+
+.openedNavHolder {
+  position: absolute;
+  top: 5.5vh;
+  left: 5.2%;
+  width: 50px;
+  height: 90vh;
+}
+
+.openedNavHolder #openedButton {
+  all: unset;
+  -webkit-animation-name: merge;
+          animation-name: merge;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 140px;
+  height: 30px;
+  padding-top: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #021859;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+}
+
+.openedNavHolder .openedMenu {
+  -webkit-animation-name: merge;
+          animation-name: merge;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  width: 140px;
+  height: 85vh;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.openedNavHolder .openedMenu a {
+  -webkit-animation-name: mergeLink;
+          animation-name: mergeLink;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.openedNavHolder .openedMenu a:empty {
+  -webkit-animation-name: mergeLink;
+          animation-name: mergeLink;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  content: "";
+  text-decoration: none;
+  color: #021859;
+  font-size: 20px;
+}
+
+@-webkit-keyframes merge {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 140px;
+  }
+}
+
+@keyframes merge {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 140px;
+  }
+}
+
+@-webkit-keyframes mergeLink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mergeLink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=App.css.map */
