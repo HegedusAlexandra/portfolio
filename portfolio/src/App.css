@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;800&display=swap");
 /* Color Theme Swatches in Hex */
 .EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-1-hex {
   color: #021859;
@@ -63,7 +62,6 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  z-index: -1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,6 +74,8 @@ body {
       align-content: space-between;
   width: 90%;
   height: 90vh;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   /*  border: $blueLight 4px solid; */
 }
 
@@ -116,15 +116,6 @@ body {
   height: 89vh;
 }
 
-.boxWave .hb .vl1 {
-  width: 4px;
-  background-color: #51718c;
-  -webkit-animation: openVL1 5s;
-          animation: openVL1 5s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-}
-
 .boxWave .hb .vl2 {
   width: 4px;
   background-color: #51718c;
@@ -134,6 +125,213 @@ body {
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
+}
+
+.boxWave .closedNavHolder {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 50px;
+  height: 89vh;
+  border-left: 4px solid #51718c;
+  -webkit-animation: openVL1 5s;
+          animation: openVL1 5s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+.boxWave #closedButton {
+  all: unset;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+  height: 30px;
+  background-color: #51718c;
+  margin-top: 240px;
+  border: 0px 0px 4px 4px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  -webkit-animation: openIcon 10s;
+          animation: openIcon 10s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.boxWave .closedMenu {
+  display: none;
+}
+
+.boxWave .openedNavHolder {
+  position: absolute;
+  width: 200px;
+  height: 90vh;
+  border-left: 4px solid #51718c;
+  overflow: hidden;
+}
+
+.boxWave #openedButton {
+  all: unset;
+  -webkit-animation-name: merge;
+          animation-name: merge;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 140px;
+  height: 30px;
+  padding-top: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #021859;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+}
+
+.boxWave .openedMenu {
+  -webkit-animation-name: merge;
+          animation-name: merge;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  width: 140px;
+  height: 85vh;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.boxWave .openedMenu a {
+  -webkit-animation-name: mergeLink;
+          animation-name: mergeLink;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.boxWave .openedMenu a:empty {
+  -webkit-animation-name: mergeLink;
+          animation-name: mergeLink;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  content: "";
+  text-decoration: none;
+  color: #021859;
+  font-size: 20px;
+}
+
+@-webkit-keyframes merge {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 140px;
+  }
+}
+
+@keyframes merge {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 140px;
+  }
+}
+
+@-webkit-keyframes mergeLink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mergeLink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.boxWave .boxToFill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 89vh;
+}
+
+.boxWave .boxToFill .boxToFillCover {
+  width: 80%;
+  height: 20vh;
+  -webkit-transform: translate(20%, -10%);
+          transform: translate(20%, -10%);
+  font-size: 160px;
+  color: #021859;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 3px 3px 2px black, -1px -1px 4px #aeaeae;
+}
+
+.boxWave .boxToFill .boxToFillCirlcle {
+  position: absolute;
+  z-index: -1;
+  left: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 71vh;
+  height: 71vh;
+  border-radius: 50%;
+  margin: auto;
+  background-image: url("./beton.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 2px 19px 38px, rgba(0, 0, 0, 0.22) 2px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 2px 19px 38px, rgba(0, 0, 0, 0.22) 2px 15px 12px;
+  -webkit-animation: spin 30s linear infinite;
+          animation: spin 30s linear infinite;
 }
 
 @-webkit-keyframes openVL1 {
@@ -220,139 +418,11 @@ body {
   }
 }
 
-.closedNavHolder {
-  position: absolute;
-  top: 5.5vh;
-  left: 1.5%;
-  padding-top: 240px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 50px;
-  height: 90vh;
-}
-
-.closedNavHolder #closedButton {
-  all: unset;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  width: 80px;
-  height: 30px;
-  background-color: #51718c;
-  border: 0px 0px 4px 4px;
-  color: white;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-.closedNavHolder .closedMenu {
-  display: none;
-}
-
-.openedNavHolder {
-  position: absolute;
-  top: 5.5vh;
-  left: 5.2%;
-  width: 50px;
-  height: 90vh;
-}
-
-.openedNavHolder #openedButton {
-  all: unset;
-  -webkit-animation-name: merge;
-          animation-name: merge;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  width: 140px;
-  height: 30px;
-  padding-top: 2px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #021859;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-}
-
-.openedNavHolder .openedMenu {
-  -webkit-animation-name: merge;
-          animation-name: merge;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  display: block;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 20px;
-  width: 140px;
-  height: 85vh;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.openedNavHolder .openedMenu a {
-  -webkit-animation-name: mergeLink;
-          animation-name: mergeLink;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-}
-
-.openedNavHolder .openedMenu a:empty {
-  -webkit-animation-name: mergeLink;
-          animation-name: mergeLink;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  content: "";
-  text-decoration: none;
-  color: #021859;
-  font-size: 20px;
-}
-
-@-webkit-keyframes merge {
-  from {
-    width: 0px;
-  }
-  to {
-    width: 140px;
-  }
-}
-
-@keyframes merge {
-  from {
-    width: 0px;
-  }
-  to {
-    width: 140px;
-  }
-}
-
-@-webkit-keyframes mergeLink {
+@-webkit-keyframes openIcon {
   0% {
+    opacity: 0;
+  }
+  50% {
     opacity: 0;
   }
   100% {
@@ -360,12 +430,29 @@ body {
   }
 }
 
-@keyframes mergeLink {
+@keyframes openIcon {
   0% {
+    opacity: 0;
+  }
+  50% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 /*# sourceMappingURL=App.css.map */
