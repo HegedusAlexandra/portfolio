@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;800&family=Roboto+Condensed&display=swap");
+
 /* Color Theme Swatches in Hex */
 .EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-1-hex {
   color: #021859;
@@ -35,9 +37,10 @@
 /* Color Theme sass variable */
 $blue: #021859;
 $blueLight: #51718c;
+$blueNeon: #2dc6fe;
 $blueDark: #273459;
 $blueGrey: #212b40;
-$orange: #bf8069;
+$orange: #ee5653;
 
 body {
   width: 100%;
@@ -47,23 +50,30 @@ body {
   padding: 0;
   border: 0;
 
-  background: $blue; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    $orange,
-    $blue
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    $orange,
-    $blue
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(135deg, $orange 50%, $blueDark 50%); */
+  /* background: linear-gradient(135deg, $orange 20%, $blueDark 70%); */
+  background-color: $blueDark;
+
+  overflow: hidden;
 }
 
+#color {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+
+  width: 40%;
+  height: 1000vh;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: $orange;
+
+
+}
 
 /* boxWave - the animated border */
 
-.boxWave {
+.backgroundBox {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -74,28 +84,12 @@ body {
   justify-items: center;
   align-content: space-between;
 
-  width: 90%;
+  width: 94%;
   height: 90vh;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) -5px -19px 38px,
+    rgba(0, 0, 0, 0.3) 5px 15px 12px;
 
   /*  border: $blueLight 4px solid; */
-
-  .hl1 {
-    width: 100%;
-    height: 4px;
-    background-color: $blueLight;
-    animation: openHL1 5s;
-    animation-timing-function: ease-in;
-  }
-
-  .hl2 {
-    width: 100%;
-    height: 4px;
-    background-color: $blueLight;
-    animation: openHL2 10s;
-    animation-timing-function: ease-out;
-  }
 
   .hb {
     display: flex;
@@ -105,249 +99,347 @@ body {
 
     width: 100%;
     height: 89vh;
-
-    .vl2 {
-      width: 4px;
-
-      background-color: $blueLight;
-      animation: openVL2 10s;
-      animation-fill-mode: forwards;
-      animation-timing-function: ease-out;
-    }
   }
+
   .closedNavHolder {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
     position: absolute;
 
-    box-sizing: border-box;
+    width: 160px;
+    height: 80vh;
 
-    width: 50px;
-    height: 89vh;
-
-    border-left: 4px solid $blueLight;
-    animation: openVL1 5s;
-    animation-timing-function: ease-in;
+    margin-top: 60px;
   }
 
   #closedButton {
     all: unset;
-    position: relative;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 220px;
+    height: 120px;
+
+    border: 0px 0px 4px 4px;
+    padding: 4px;
+
+    color: white;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-size: 80px;
+    transform: rotate(-90deg);
+
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 1), -1px -1px 8px rgb(0, 0, 0);
+  }
+
+  #rightSide {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+
+    width: 200px;
+    height: 200px;
+
+    top: 78%;
+    right: 2%;
+
+    gap: 20px;
+  }
+
+  #github {
+    all: unset;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 60px;
     height: 30px;
 
-    background-color: $blueLight;
-
-    margin-top: 240px;
     border: 0px 0px 4px 4px;
+
+    overflow: hidden;
 
     color: white;
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
+    letter-spacing: 2px;
 
-    animation: openIcon 10s;
-    animation-timing-function: ease-out;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 1), -1px -1px 8px rgb(0, 0, 0);
+  }
+
+  #facebook {
+    all: unset;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 30px;
+
+    border: 0px 0px 4px 4px;
+
+    overflow: hidden;
+
+    color: white;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 2px;
+
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 1), -1px -1px 8px rgb(0, 0, 0);
   }
 
   .closedMenu {
     display: none;
   }
 
+  .boxToFill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 89vh;
+
+    .boxToFillCover {
+      position: absolute;
+      z-index: 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 80%;
+      height: 20vh;
+
+      font-size: 210px;
+      color: #2dc6fe;
+      letter-spacing: 8px;
+
+      font-family: "Roboto Condensed", sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-shadow: 8px 8px 10px rgba(0, 0, 0, 1), -2px -2px 10px rgb(0, 0, 0);
+    }
+
+    .boxToFillCirlcle {
+      position: absolute;
+      z-index: -1;
+
+      display: flex;
+      justify-items: center;
+      align-items: center;
+
+      width: 70vh;
+      height: 70vh;
+
+      border-radius: 50%;
+      margin: auto;
+      background-image: url("./beton.jpg");
+      background-attachment: fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      box-shadow: rgba(0, 0, 0, 0.3) -8px -8px 12px,
+        rgba(0, 0, 0, 0.22) 8px 8px 12px;
+
+      animation: spin 30s linear infinite;
+    }
+
+    #me {
+      width: 490px;
+      height: 490px;
+
+      border-radius: 50%;
+
+      background-image: url("./me.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.502) inset,
+        0px -10px 10px rgba(0, 0, 0, 0.486) inset,
+        0px 10px 10px rgba(0, 0, 0, 0.502) inset,
+        10px 0px 10px rgba(0, 0, 0, 0.486) inset;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes merge {
+      from {
+        box-shadow: rgba(0, 0, 0, 0) 0px 19px 38px,
+          rgba(0, 0, 0, 0) 0px 15px 12px;
+      }
+      to {
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      }
+    }
+  }
+}
+
+#menuColor {
+  position: absolute;
+  z-index: -1;
+  left: -5%;
+  top: -5%;
+
+  width: 140%;
+  height: 1000vh;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: $orange;
+  animation: spreadColor 2s ease-in-out;
+}
+
+@keyframes spreadColor {
+  from {
+    left: 50%;
+    top: 50%;
+    width: 40%;
+  }
+  to {
+    left: -5%;
+    top: -5%;
+    width: 140%;
+  }
+}
+
+.closedBackgroundBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(60%,60%);
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: space-between;
+
+  width: 74%;
+  height: 90vh;
+  box-shadow: rgba(0, 0, 0, 0.3) -5px -19px 38px,
+    rgba(0, 0, 0, 0.3) 5px 15px 12px;
+  animation: floatDown 2s ease-in-out;
+
   .openedNavHolder {
     position: absolute;
+    left: -105%;
+    top: -165%;
 
-    width: 200px;
-    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 
-    border-left: 4px solid $blueLight;
-    overflow: hidden;
+    width: 100%;
+    height: 50vh;
+
+    position: relative;
+    transform: translateY(20px);
+    opacity: 1;
+    transition: 2s all ease;
   }
 
   #openedButton {
     all: unset;
-
-    animation-name: merge;
-    animation-duration: 2s;
+    position: absolute;
+    transform: translate(120%, -70%);
 
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 
-    width: 140px;
-    height: 30px;
+    position: absolute;
+    z-index: 2;
+
+    width: 400px;
+    height: 60px;
 
     padding-top: 2px;
+    border-radius: 8px;
 
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: $blueNeon;
 
-    color: $blue;
+    color: #f2ebeb;
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-size: 50px;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4),
+      -1px -1px 4px rgba(0, 0, 0, 0.4);
+
+    box-shadow: rgba(0, 0, 0, 0.3) -5px -19px 38px,
+      rgba(0, 0, 0, 0.3) 5px 15px 12px;
+  }
+
+  video {
+    all: unset;
+    width: 70%;
+    height: 56vh;
+
+    border-radius: 8px;
+
+    box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.202),
+      0px -10px 20px rgba(0, 0, 0, 0.286), 0px 10px 20px rgba(0, 0, 0, 0.202),
+      10px 0px 20px rgba(0, 0, 0, 0.286);
   }
 
   .openedMenu {
-    animation-name: merge;
-    animation-duration: 2s;
-
     display: block;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    z-index: 1;
 
-    gap: 20px;
+    width: 70%;
+    height: 56vh;
 
-    width: 140px;
-    height: 85vh;
+    background: #ae565360;
 
-    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
 
     a {
-      animation-name: mergeLink;
-      animation-duration: 3s;
-
       text-decoration: none;
-      color: white;
-      font-size: 20px;
+      color: $blueNeon;
+      text-transform: uppercase;
+      font-family: "Poppins", sans-serif;
+      font-size: 50px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-shadow: 3px 3px 4px rgba(0, 0, 0, 1), -1px -1px 4px rgb(0, 0, 0);
     }
 
-    a:empty {
-      animation-name: mergeLink;
-      animation-duration: 3s;
-
-      content: "";
+    a:hover {
       text-decoration: none;
-      color: $blue;
-      font-size: 20px;
-    }
-
-    @keyframes merge {
-      from {
-        width: 0px;
-      }
-      to {
-        width: 140px;
-      }
-    }
-
-    @keyframes mergeLink {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+      color: $blueNeon;
+      text-transform: uppercase;
+      font-family: "Poppins", sans-serif;
+      font-size: 75px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      
+      text-shadow: 8px 8px 12px rgba(0, 0, 0, 1), -3px -3px 4px rgb(0, 0, 0);
     }
   }
-
-  .boxToFill{
-    display: flex;
-    justify-items: center;
-    align-items: center;
-
-    width: 100%;
-    height: 89vh;
-    
-  
-  .boxToFillCover{
-    width: 80%;
-    height: 20vh;
-
-    transform: translate(20%,-10%);
-
-    font-size: 160px;
-    color: $blue;
-    font-family: "Poppins", sans-serif;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-shadow: 3px 3px 2px rgba(0, 0, 0, 1), -1px -1px 4px rgb(174, 174, 174);
-  }
-
-  .boxToFillCirlcle{
-    position: absolute;
-    z-index: -1;
-    left:30%;
-
-    display: flex;
-    justify-items: center;
-    align-items: center;
-
-    width: 71vh;
-    height: 71vh;
-
-    border-radius: 50%;
-    margin: auto;
-    background-image: url("./beton.jpg");    
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    box-shadow: rgba(0, 0, 0, 0.3) 2px 19px 38px,
-      rgba(0, 0, 0, 0.22) 2px 15px 12px;
-
-    animation:spin 30s linear infinite;
-  }
-  }
-
-  @keyframes openVL1 {
-    from {
-      height: 1vh;
-    }
-    to {
-      height: 89vh;
-    }
-  }
-
-  @keyframes openHL1 {
-    from {
-      width: 1%;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  @keyframes openHL2 {
-    0% {
-      width: 0%;
-    }
-    50% {
-      width: 0%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-
-  @keyframes openVL2 {
-    0% {
-      height: 0vh;
-    }
-    50% {
-      height: 0vh;
-    }
-    100% {
-      height: 89vh;
-    }
-  }
-
-  @keyframes openIcon {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes spin { 
-    100% {transform: rotate(360deg); } 
 }
+
+@keyframes floatDown {
+  from {
+    transform: translate(-50%, -50%);
+   
+  }
+  to {
+    transform: translate(60%, 60%);
+
+  }
 }

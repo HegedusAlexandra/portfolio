@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;800&family=Roboto+Condensed&display=swap");
 /* Color Theme Swatches in Hex */
 .EOD-Distillery-Cocktails-Illustrated-by-Steven-Noble-1-hex {
   color: #021859;
@@ -47,16 +48,26 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background: #021859;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#bf8069), to(#021859));
-  background: linear-gradient(to right, #bf8069, #021859);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(135deg, $orange 50%, $blueDark 50%); */
+  /* background: linear-gradient(135deg, $orange 20%, $blueDark 70%); */
+  background-color: #273459;
+  overflow: hidden;
+}
+
+#color {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  width: 40%;
+  height: 1000vh;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #ee5653;
 }
 
 /* boxWave - the animated border */
-.boxWave {
+.backgroundBox {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -72,34 +83,14 @@ body {
   justify-items: center;
   -ms-flex-line-pack: justify;
       align-content: space-between;
-  width: 90%;
+  width: 94%;
   height: 90vh;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) -5px -19px 38px, rgba(0, 0, 0, 0.3) 5px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) -5px -19px 38px, rgba(0, 0, 0, 0.3) 5px 15px 12px;
   /*  border: $blueLight 4px solid; */
 }
 
-.boxWave .hl1 {
-  width: 100%;
-  height: 4px;
-  background-color: #51718c;
-  -webkit-animation: openHL1 5s;
-          animation: openHL1 5s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-}
-
-.boxWave .hl2 {
-  width: 100%;
-  height: 4px;
-  background-color: #51718c;
-  -webkit-animation: openHL2 10s;
-          animation: openHL2 10s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-}
-
-.boxWave .hb {
+.backgroundBox .hb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,33 +107,65 @@ body {
   height: 89vh;
 }
 
-.boxWave .hb .vl2 {
-  width: 4px;
-  background-color: #51718c;
-  -webkit-animation: openVL2 10s;
-          animation: openVL2 10s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-}
-
-.boxWave .closedNavHolder {
+.backgroundBox .closedNavHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   position: absolute;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 50px;
-  height: 89vh;
-  border-left: 4px solid #51718c;
-  -webkit-animation: openVL1 5s;
-          animation: openVL1 5s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
+  width: 160px;
+  height: 80vh;
+  margin-top: 60px;
 }
 
-.boxWave #closedButton {
+.backgroundBox #closedButton {
   all: unset;
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 220px;
+  height: 120px;
+  border: 0px 0px 4px 4px;
+  padding: 4px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 80px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  text-shadow: 3px 3px 8px black, -1px -1px 8px black;
+}
+
+.backgroundBox #rightSide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  z-index: 3;
+  width: 200px;
+  height: 200px;
+  top: 78%;
+  right: 2%;
+  gap: 20px;
+}
+
+.backgroundBox #github {
+  all: unset;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -152,60 +175,278 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 60px;
   height: 30px;
-  background-color: #51718c;
-  margin-top: 240px;
   border: 0px 0px 4px 4px;
+  overflow: hidden;
   color: white;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  -webkit-animation: openIcon 10s;
-          animation: openIcon 10s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 8px black, -1px -1px 8px black;
 }
 
-.boxWave .closedMenu {
-  display: none;
-}
-
-.boxWave .openedNavHolder {
-  position: absolute;
-  width: 200px;
-  height: 90vh;
-  border-left: 4px solid #51718c;
-  overflow: hidden;
-}
-
-.boxWave #openedButton {
+.backgroundBox #facebook {
   all: unset;
-  -webkit-animation-name: merge;
-          animation-name: merge;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  width: 140px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 30px;
-  padding-top: 2px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #021859;
+  border: 0px 0px 4px 4px;
+  overflow: hidden;
+  color: white;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 8px black, -1px -1px 8px black;
 }
 
-.boxWave .openedMenu {
-  -webkit-animation-name: merge;
-          animation-name: merge;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+.backgroundBox .closedMenu {
+  display: none;
+}
+
+.backgroundBox .boxToFill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 89vh;
+}
+
+.backgroundBox .boxToFill .boxToFillCover {
+  position: absolute;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 20vh;
+  font-size: 210px;
+  color: #2dc6fe;
+  letter-spacing: 8px;
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 8px 8px 10px black, -2px -2px 10px black;
+}
+
+.backgroundBox .boxToFill .boxToFillCirlcle {
+  position: absolute;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70vh;
+  height: 70vh;
+  border-radius: 50%;
+  margin: auto;
+  background-image: url("./beton.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) -8px -8px 12px, rgba(0, 0, 0, 0.22) 8px 8px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) -8px -8px 12px, rgba(0, 0, 0, 0.22) 8px 8px 12px;
+  -webkit-animation: spin 30s linear infinite;
+          animation: spin 30s linear infinite;
+}
+
+.backgroundBox .boxToFill #me {
+  width: 490px;
+  height: 490px;
+  border-radius: 50%;
+  background-image: url("./me.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.502) inset, 0px -10px 10px rgba(0, 0, 0, 0.486) inset, 0px 10px 10px rgba(0, 0, 0, 0.502) inset, 10px 0px 10px rgba(0, 0, 0, 0.486) inset;
+          box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.502) inset, 0px -10px 10px rgba(0, 0, 0, 0.486) inset, 0px 10px 10px rgba(0, 0, 0, 0.502) inset, 10px 0px 10px rgba(0, 0, 0, 0.486) inset;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes merge {
+  from {
+    -webkit-box-shadow: rgba(0, 0, 0, 0) 0px 19px 38px, rgba(0, 0, 0, 0) 0px 15px 12px;
+            box-shadow: rgba(0, 0, 0, 0) 0px 19px 38px, rgba(0, 0, 0, 0) 0px 15px 12px;
+  }
+  to {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+}
+
+@keyframes merge {
+  from {
+    -webkit-box-shadow: rgba(0, 0, 0, 0) 0px 19px 38px, rgba(0, 0, 0, 0) 0px 15px 12px;
+            box-shadow: rgba(0, 0, 0, 0) 0px 19px 38px, rgba(0, 0, 0, 0) 0px 15px 12px;
+  }
+  to {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+}
+
+#menuColor {
+  position: absolute;
+  z-index: -1;
+  left: -5%;
+  top: -5%;
+  width: 140%;
+  height: 1000vh;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #ee5653;
+  -webkit-animation: spreadColor 2s ease-in-out;
+          animation: spreadColor 2s ease-in-out;
+}
+
+@-webkit-keyframes spreadColor {
+  from {
+    left: 50%;
+    top: 50%;
+    width: 40%;
+  }
+  to {
+    left: -5%;
+    top: -5%;
+    width: 140%;
+  }
+}
+
+@keyframes spreadColor {
+  from {
+    left: 50%;
+    top: 50%;
+    width: 40%;
+  }
+  to {
+    left: -5%;
+    top: -5%;
+    width: 140%;
+  }
+}
+
+.closedBackgroundBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(60%, 60%);
+          transform: translate(60%, 60%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  width: 74%;
+  height: 90vh;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) -5px -19px 38px, rgba(0, 0, 0, 0.3) 5px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) -5px -19px 38px, rgba(0, 0, 0, 0.3) 5px 15px 12px;
+  -webkit-animation: floatDown 2s ease-in-out;
+          animation: floatDown 2s ease-in-out;
+}
+
+.closedBackgroundBox .openedNavHolder {
+  position: absolute;
+  left: -105%;
+  top: -165%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 1;
+  -webkit-transition: 2s all ease;
+  transition: 2s all ease;
+}
+
+.closedBackgroundBox #openedButton {
+  all: unset;
+  position: absolute;
+  -webkit-transform: translate(120%, -70%);
+          transform: translate(120%, -70%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  z-index: 2;
+  width: 400px;
+  height: 60px;
+  padding-top: 2px;
+  border-radius: 8px;
+  background-color: #2dc6fe;
+  color: #f2ebeb;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 50px;
+  letter-spacing: 4px;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4), -1px -1px 4px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) -5px -19px 38px, rgba(0, 0, 0, 0.3) 5px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) -5px -19px 38px, rgba(0, 0, 0, 0.3) 5px 15px 12px;
+}
+
+.closedBackgroundBox video {
+  all: unset;
+  width: 70%;
+  height: 56vh;
+  border-radius: 8px;
+  -webkit-box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.202), 0px -10px 20px rgba(0, 0, 0, 0.286), 0px 10px 20px rgba(0, 0, 0, 0.202), 10px 0px 20px rgba(0, 0, 0, 0.286);
+          box-shadow: -10px 0px 20px rgba(0, 0, 0, 0.202), 0px -10px 20px rgba(0, 0, 0, 0.286), 0px 10px 20px rgba(0, 0, 0, 0.202), 10px 0px 20px rgba(0, 0, 0, 0.286);
+}
+
+.closedBackgroundBox .openedMenu {
   display: block;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -220,239 +461,55 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 20px;
-  width: 140px;
-  height: 85vh;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.boxWave .openedMenu a {
-  -webkit-animation-name: mergeLink;
-          animation-name: mergeLink;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-}
-
-.boxWave .openedMenu a:empty {
-  -webkit-animation-name: mergeLink;
-          animation-name: mergeLink;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  content: "";
-  text-decoration: none;
-  color: #021859;
-  font-size: 20px;
-}
-
-@-webkit-keyframes merge {
-  from {
-    width: 0px;
-  }
-  to {
-    width: 140px;
-  }
-}
-
-@keyframes merge {
-  from {
-    width: 0px;
-  }
-  to {
-    width: 140px;
-  }
-}
-
-@-webkit-keyframes mergeLink {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes mergeLink {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.boxWave .boxToFill {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 89vh;
-}
-
-.boxWave .boxToFill .boxToFillCover {
-  width: 80%;
-  height: 20vh;
-  -webkit-transform: translate(20%, -10%);
-          transform: translate(20%, -10%);
-  font-size: 160px;
-  color: #021859;
-  font-family: "Poppins", sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-shadow: 3px 3px 2px black, -1px -1px 4px #aeaeae;
-}
-
-.boxWave .boxToFill .boxToFillCirlcle {
   position: absolute;
-  z-index: -1;
-  left: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 71vh;
-  height: 71vh;
-  border-radius: 50%;
-  margin: auto;
-  background-image: url("./beton.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 2px 19px 38px, rgba(0, 0, 0, 0.22) 2px 15px 12px;
-          box-shadow: rgba(0, 0, 0, 0.3) 2px 19px 38px, rgba(0, 0, 0, 0.22) 2px 15px 12px;
-  -webkit-animation: spin 30s linear infinite;
-          animation: spin 30s linear infinite;
+  z-index: 1;
+  width: 70%;
+  height: 56vh;
+  background: #ae565360;
+  border-radius: 8px;
 }
 
-@-webkit-keyframes openVL1 {
+.closedBackgroundBox .openedMenu a {
+  text-decoration: none;
+  color: #2dc6fe;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-shadow: 3px 3px 4px black, -1px -1px 4px black;
+}
+
+.closedBackgroundBox .openedMenu a:hover {
+  text-decoration: none;
+  color: #2dc6fe;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 75px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-shadow: 8px 8px 12px black, -3px -3px 4px black;
+}
+
+@-webkit-keyframes floatDown {
   from {
-    height: 1vh;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   to {
-    height: 89vh;
+    -webkit-transform: translate(60%, 60%);
+            transform: translate(60%, 60%);
   }
 }
 
-@keyframes openVL1 {
+@keyframes floatDown {
   from {
-    height: 1vh;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   to {
-    height: 89vh;
-  }
-}
-
-@-webkit-keyframes openHL1 {
-  from {
-    width: 1%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes openHL1 {
-  from {
-    width: 1%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@-webkit-keyframes openHL2 {
-  0% {
-    width: 0%;
-  }
-  50% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes openHL2 {
-  0% {
-    width: 0%;
-  }
-  50% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@-webkit-keyframes openVL2 {
-  0% {
-    height: 0vh;
-  }
-  50% {
-    height: 0vh;
-  }
-  100% {
-    height: 89vh;
-  }
-}
-
-@keyframes openVL2 {
-  0% {
-    height: 0vh;
-  }
-  50% {
-    height: 0vh;
-  }
-  100% {
-    height: 89vh;
-  }
-}
-
-@-webkit-keyframes openIcon {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes openIcon {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-transform: translate(60%, 60%);
+            transform: translate(60%, 60%);
   }
 }
 /*# sourceMappingURL=App.css.map */
